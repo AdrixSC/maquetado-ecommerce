@@ -47,24 +47,24 @@ paintDataJson = (json, Json) => {
     })
 
     productsResultsSust.forEach((element, index) => {
-        // if (index < 25) {
-        //     let output = `
-        //         <div class="float-left ml-5 mb-5 bg-white rounded">
-        //             <div class="boxInner">
-        //                 <div class="image">
-        //                     <img src="${element.thumbnail}" alt="${element.title}">
-        //                 </div>
-        //                 <div class="text elements-data" data-id="${element.id}" data-rating="${element.reviews.rating_average}" data-state="${element.address.state_name}">${element.title}</div>
-        //                 <div class="price">${element.price}</div>
-        //                 <a href="product.html">
-        //                     <i class="fas fa-eye"></i>
-        //                 </a>
-        //             <div class="buttonShop">Comprar</div>
-        //             </div>
-        //         </div>                                      
-        //     `
-        //     container.insertAdjacentHTML('beforeend', output);
-        // }
+        if (index < 25) {
+            let output = `
+                <div class="col-md-3">
+                    <div class="boxInner">
+                        <div class="image">
+                            <img src="${element.thumbnail}" alt="${element.title}">
+                        </div>
+                        <div class="text elements-data" data-id="${element.id}" data-rating="${element.reviews.rating_average}" data-state="${element.address.state_name}">${element.title}</div>
+                        <div class="price">$${element.price}</div>
+                        <a href="product.html">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    <div class="buttonShop">Comprar</div>
+                    </div>
+                </div>
+            `
+            container.insertAdjacentHTML('beforeend', output);
+        }
     })
 
     let elementsData = document.getElementsByClassName('elements-data');
